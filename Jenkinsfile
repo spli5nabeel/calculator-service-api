@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                println "Inside build package..."                
+                println "Inside build package..."   
+                buildPackage()             
             }
         }
         stage('Test') {
