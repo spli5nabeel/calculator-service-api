@@ -4,20 +4,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Prepare Build Package') {
             steps {
                 println "Inside build package..."   
                 buildPackage()             
             }
         }
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Testing..'
+                echo 'Preparing Docker image'
             }
         }
-        stage('Deploy') {
+        stage('Deploying Image to K8 Cluster') {
             steps {
-                echo 'Deploying....'
+                echo 'Preparing Docker image'
+            }
+        }
+        stage('Upload Image to Nexus') {
+            steps {
+                echo 'Uploading Docker Image to Nexus'
             }
         }
     }
