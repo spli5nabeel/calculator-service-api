@@ -7,6 +7,11 @@ pipeline {
         stage('Prepare Build Package') {
             steps {
                 println "Inside build package..."   
+                dir('devops'){
+                    sh """
+                        touch test
+                    """
+                }
                 buildPackage()             
             }
         }
